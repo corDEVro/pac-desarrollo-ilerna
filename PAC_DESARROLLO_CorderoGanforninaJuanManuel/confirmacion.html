@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width", initial-scale=1.0">
+	<title>Confirmación de compra</title>
+	<link rel="stylesheet" href="./css/confstyles.css">
+	<script src="./js/script.js" defer></script>
+</head>
+<body>
+
+<h1>Confirmación de Compra</h1>
+<div>
+	<p>Nombre: <span id="nombre"></span></p>
+	<p>Apellidos: <span id="apellidos"></span></p>
+	<p>Fecha y Lugar: <span id="fechaLugar"></span></p>
+	<p>Cantidad de Entradas: <span id="cantidad"></span></p>
+	<p>Categoría de Entradas: <span id="categoria"></span></p>
+	<p>Método de Pago: <span id="metodoPago"></span></p>
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Recuperar datos de sessionStorage
+        document.getElementById("nombre").textContent = sessionStorage.getItem("nombre");
+        document.getElementById("apellidos").textContent = sessionStorage.getItem("apellidos");
+        document.getElementById("fechaLugar").textContent = sessionStorage.getItem("fechaLugar");
+        document.getElementById("cantidad").textContent = sessionStorage.getItem("cantidad");
+		document.getElementById("categoria").textContent = sessionStorage.getItem("categoria");
+        document.getElementById("metodoPago").textContent = sessionStorage.getItem("metodoPago");
+    });
+</script>
+
+</body>
+</html>

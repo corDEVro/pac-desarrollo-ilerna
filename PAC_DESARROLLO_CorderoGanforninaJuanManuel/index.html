@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Conciertos Manolo García</title>
+	<link rel="stylesheet" href="./css/styles.css">
+	<script src="./js/script.js" defer></script> <!-- defer es para no bloquear la carga  de la página -->
+</head>
+<body>
+	<header>
+		<h1>Manolo García</h1>
+		<img class="hero" src="./img/principal.jpeg" style="max-width: 400px; height: auto;" alt="Gira Manolo García">
+	</header>
+	
+	<h2>Gira - 2025</h2>
+	<p class="description">
+	Manolo García, uno de los artistas más queridos y respetados de la música española,
+	ha alcanzado un nuevo hito en su ya impresionante carrera. 
+	Tras el rotundo éxito de su Gira de Teatros, donde ha conseguido el impresionante 
+	logro de agotar todas las entradas en cada una de sus presentaciones, 
+	el artista no se detiene. Ahora, con un espíritu renovado y una energía inagotable, 
+	se embarca en una nueva aventura musical que promete llevar su arte a los rincones más prestigiosos de España.
+	</p>
+	
+	<h2>Próximos Conciertos Gira 2025</h2>
+	<table class="concerts">
+		<tr>
+			<th>Fecha</th>
+			<th>Hora</th>
+			<th>Ciudad</th>
+			<th>Lugar</th>
+			<th>Precio</th>
+		</tr>
+		<tr>
+			<td>20 Abril</td>
+			<td>21:00</td>
+			<td>Albacete</td>
+			<td>Plaza de Toros</td>
+			<td>36 €</td>
+		</tr>
+		<tr>
+			<td>09 Mayo</td>
+			<td>20:00</td>
+			<td>Madrid</td>
+			<td>WiZink Center</td>
+			<td>50 €</td>
+		</tr>
+		<tr>
+			<td>18 Mayo</td>
+			<td>20:00</td>
+			<td>Barcelona</td>
+			<td>Palau Sant Jordi</td>
+			<td>50 €</td>
+		</tr>
+		<tr>
+			<td>29 Junio</td>
+			<td>21:00</td>
+			<td>Chiclana de la Fta.</td>
+			<td>Concert Music Festival</td>
+			<td>32 €</td>
+		</tr>		
+	</table>
+
+	<h2>Entradas</h2>
+	<div class="formulary">
+		<form action="./confirmacion.html" method="get"> <!-- action donde se va a enviar la info del formulario, method como se emviará-->
+		<!-- Datos Personales -->
+		<div class="formcontain">
+			<legend>Datos Personales:</legend>
+			<label for="name">Nombre:</label> <!-- for para asociar la entrada especifica (esta debe de coincidir en su id) -->
+			<input type="text" id="name" name="name" required><br><br>
+			<label for="surname">Apellidos:</label>
+			<input type="text" id="surname" name="surname" required><br><br>
+		</div>
+		<!-- Detalles Compra -->
+		<div class="formcontain">
+			<legend>Detalles de la compra:</legend>
+		<!-- Fecha Concierto -->
+			<label for="date_spot">Fecha y lugar del concierto:</label>
+			<select id="date_spot" name="date_spot"> <!-- Aqui no necesito poner "required" porque sale una ubicación por defecto-->
+				<option value="Albacete, Plaza de Toros">20 de Abril Plaza de Toros de Albacete</option>
+				<option value="Madrid, WiZink Center">9 de Mayo WiZink Center de Madrid</option>
+				<option value="Barcelona, Palau Sant Jordi">18 de Mayo Palau Sant Jordi de Barcelona Center de Madrid</option>
+				<option value="Chiclana, Concert Music Festival">29 de Junio Concert Music Festival de Chiclana de la Frontera</option>
+			</select><br><br>
+		<!-- Num. entradas -->
+			<label for="number">Cantidad de entradas:</label>
+			<input type="number" id="cantidad" name="cantidad" min="1" max="10" value="1"><br><br> <!-- Aqui no necesito poner "required" porque exijo que la minima sea 1-->
+			
+		<!-- Categoría Entrada -->
+			<label for="categoria">Categoría</label> <!-- Aqui no necesito poner "required" porque sale una opcion por defecto-->
+			<select id="categoria" name="categoria">
+				<option value="Pista">Pista</option>
+				<option value="Palco">Palco</option>
+				<option value="VIP">VIP</option>
+				<option value="Mesa Restaurante">Mesa Restaurante</option>
+			</select><br><br>
+			
+		</div>
+
+		<!-- Metodo de pago -->
+		<fieldset class="formcontain">
+			<legend>Método de pago:</legend>
+			<label for="tarjeta">					
+				<input type="radio" id="tarjeta" name="pago" value="Tarjeta"> <!-- name="" es necesario para enviar datos del formulario -->
+				<img class="master" src="./img/master.png" style="width: 12%; height: auto;" alt="Mastercard">
+				<img class="visa" src="./img/visa.png" style="width: 12%; height: auto;" alt="Visa">   </label>
+			<label for="paypal">
+				<input type="radio" id="paypal" name="pago" value="Paypal">
+				<img class="paypal" src="./img/paypal.png" style="width: 16%; height: auto;" alt="Paypal">   </label>
+			<label for="transferencia">
+				<input type="radio" id="transferencia" name="pago" value="Transferencia">
+				<img class="transfer" src="./img/transferencia.png" style="width: 16%; height: auto;" alt="Transferencia">   </label>
+			<label for="bizum">
+				<input type="radio" id="bizum" name="pago" value="Bizum">
+				<img class="bizum" src="./img/bizum.png" style="max-width: 16%; height: auto;" alt="Bizum">   </label>
+		</fieldset>
+			<!-- Checkbox para aceptar términos y condiciones -->
+		<label for="terminos">
+			<input type="checkbox" id="terminos" name="terminos" required> Acepto los <a href="#">términos y condiciones</a>.
+		</label><br><br>
+		
+		<!-- Botón de envío -->
+		
+		<input type="submit" value="Confirmar Compra">
+		
+		</form>
+	</div>
+	<footer>
+		<p>Web creada por Juan Manuel Cordero - 2025 &copy;</p>
+	</footer>
+
+</body>
+</html>
